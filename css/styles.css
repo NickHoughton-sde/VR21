@@ -1,0 +1,22 @@
+.my-table {
+    border: 2px dotted blue;
+    margin-left: 200px;
+    padding: 20px;
+    background-color: bisque;
+}
+
+body {
+    background-color: aqua;
+}
+
+header {
+    background-color: blue;
+}
+
+form {
+    background-color: brown;
+}
+
+.weird {
+    background-color: chartreuse;
+}

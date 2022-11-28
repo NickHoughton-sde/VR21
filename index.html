@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 
-
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Project</title>
-</head>
-<body>
-    <h1>Hello, Nick, again!</h1>
-</body>
+    <style>
+      header {
+        max-width: 100em;
+      }
+      body {
+        background-color: lightcyan;
+      }
+      section {
+        border: solid 1px rgb(95, 183, 212);
+        max-width: 100em;
+        padding: 2em;
+      }
+      #menu ul {
+        list-style: none;
+        padding: 10px;
+        border: solid 1px rgb(95, 183, 212);
+      }
+      #menu li {
+        display: inline;
+      }
+      footer {
+        border: solid 1px rgb(95, 183, 212)
+      }
+      img {
+        display: block;
+  margin-left: auto;
+  margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="menu">
+        <ul>
+          <li><a href="Home.html">About</a></li>
+          <!--add info about me-->
+          <li><a href="https://github.com/mrjoelee/TestYourJavaBeans">Projects</a></li>
+          <!--Link to github-->
+          <li><a href="resume.pdf">Resume</a></li>
+          <!--Link to Resume stored somewhere-->
+          <li><a href="https://github.com/nhouru21/VR21">Contact</a></li>
+          <!--add contact info-->
+        </ul>
+      </div>
+    </header>
+    <section>
+      <div>
+        <h2>
+          This is Nicholas Houghton's portfolio of projects!
+        </h2>
+        <a href="Home.html">
+          <img src="Holder.png" alt="Image Holder" /
+          width="300" 
+     height="400">
+        </a>
+      </div>
+    </section>
+    <section>
+      <div>
+        <a href="https://github.com/mrjoelee/TestYourJavaBeans">
+          <img src="projectimg.png" alt="projectimg" /
+          width="300" 
+     height="400">
+      </div>
+    </section>
+    <section>
+      <div>
+        <a href="resume.pdf">
+          <img src="resumethumb.png" alt="resume" /
+          width="300" 
+     height="400" >
+      </div>
+    </section>
+    <footer>
+      <div>
+        <a href=https://github.com/nhouru21/VR21>
+        Contact
+      </a>
+    </div>
+    </footer>
+  </body>
 </html>

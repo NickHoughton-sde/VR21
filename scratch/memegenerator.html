@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: blanchedalmond;
+      }
+
+    </style>
+</head>
+<body>
+    <h1>Meme Generator</h1>
+
+<div class="box">
+  <div>
+    <div id="canvasWrapper">
+    </div>
+  </div>
+  
+  
+  
+  <div>
+    <h3><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>Source Image</h3>
+    <div class="box">
+      <div>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabelUpdate">
+              </div>
+              <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                    </div>
+                    </div>
+                    </div>
+                  </form>
+              </div>
+              <form>
+                <input type="text" id="imagename" value="" />
+                <input type="button" id="submitForm" value="GO" />
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+
+    
+    <h3><i class="fa fa-commenting-o fa-fw" aria-hidden="true"></i>Meme Text</h3>
+    <div class="box">
+      <div>
+        <p>Top Text</p>
+        <input type="text" name="name" id="text-top" value="" />
+      </div>
+      <div>
+        <p>Bottom Text</p>
+        <input type="text" name="name" id="text-bottom" value="" />
+      </div>
+    </div>
+
+    
+    
+    <h3><i class="fa fa-text-height fa-fw" aria-hidden="true"></i>Text Size</h3>
+    <div class="box">
+      <div>
+        <p>Top Text: <span id="textSizeTopOut">42</span></p>
+        <input id="textSizeTop" type="range" min="2" max="80" step="2" />
+      </div>
+      <div>
+        <p>Bottom Text: <span id="textSizeBottomOut">42</span></p>
+        <input id="textSizeBottom" type="range" min="2" max="80" step="2" />
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="contentContainer" id="memeCont", style="position:relative; font-size: 5em;" >
+
+  </div>
+<script>
+  console.log(document.querySelector("#submitForm"));
+    document.querySelector('#submitForm').addEventListener("click",addToContainer) 
+
+        function addToContainer() {
+          let val = document.getElementById('imagename').value,
+            src = val,
+            img = document.createElement('img');
+            img.src = src;
+
+            let txtTop = document.getElementById("text-top").value;
+            let txtBottom = document.getElementById("text-bottom").value;
+            // // for using the slider event listener
+            // let txtSizeT = document.getElementById("textSizeTop").value;
+            // let txtSizeB = document.getElementById("textSizeBottom").value;
+
+            let node = document.createTextNode(txtTop);
+            let nodeTwo = document.createTextNode(txtBottom); 
+            let content = `
+            <div class="cardMeme">
+              <div class="cardContent">
+               <div class="topText" style="position:absolute; top: 40px; font-size:50px; color:white;">${txtTop}</div>
+                <div class="bottomimg" id="bottomIMg">
+                  <img src=${src}>
+
+                  </div> 
+                <div class="bottomText"; style="position:absolute; bottom: 100px; font-size:50px; color:white;">${txtBottom}</div> 
+              </div>
+            <button class="btn btn-primary deleteCard">
+              Delete
+              </button>
+            </div>
+            `
+            document.querySelector(".contentContainer").insertAdjacentHTML("beforeend", content);
+
+            let deleteButtons = document.querySelectorAll(".deleteCard");
+            deleteButtons.forEach(button => button.addEventListener("click", deleteCard));
+
+
+        }
+
+        function deleteCard(e) {
+          console.log(e);
+          e.target.closest(".cardMeme").remove();
+        }
+
+  </script>
+
+  
+  
+
+  <!-- <script>
+    document.querySelector('txtSizeTop').addEventListener('change', e => document.querySelector('txtSizeT') = e.target.value);
+  </script> -->
+</body>
+</html>

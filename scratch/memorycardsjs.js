@@ -25,7 +25,7 @@ function makeCardFlip(e) {
     currentCard = null;
   }
   else {
-    timeOutId = setTimeout(() => unflipCards(card, currentCard), 3000) 
+    timeOutId = setTimeout(() => unflipCards(card, currentCard), 2000) 
     card.flipped = false;
     currentCard.flipped = false;
     
@@ -50,3 +50,31 @@ function unflipCards(cardOne, cardTwo) {
     timeOutId = null;
     currentCard = null;
 }
+
+// const cardSetOne = [{id:1, imageUrl: "url"},{id:2, imageurl:"url"}]
+// const cardSetTwo = [{id:1, imageUrl: "url"},{id:2, imageurl:"url"}]
+
+// function shuffle(arr) {
+//     let shuffledArr = [];
+
+//     return shuffledArr;
+// }
+
+// suffleArrOne.forEach(
+//     // append to item in a row
+//     // append the id to data attribute
+// )
+
+// shuffleArrTwo.forEach(
+//     // append to item in a row
+// )
+
+// // set up event listeners
+
+// const clicks = [value1, value2];
+
+// if (clicks[0] === clicks[1]) {
+//     add a class called `flipped`
+// } else {
+//     // back to original state
+// }

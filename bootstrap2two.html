@@ -91,7 +91,9 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <form>
+                <!-- not sure is needed without extra form close -->
+                <!-- <form id="addBodyForm">              -->
+                <form id="cardBodyForm">
                   <div class="mb-3">
                     <label for="inputImgFile" class="form-label"
                       >Enter URL of image</label
@@ -244,7 +246,7 @@
       </div>
     </nav>
     <div class="container">
-      <div class="row"></div>
+      <div class="row" id="startCards"></div>
     </div>
 
     <!-- Bootstrap JavaScript Libraries -->
@@ -260,41 +262,41 @@
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      document
-        .querySelector("#addButtonMain")
-        .addEventListener("click", (e) => {
-          const contentCard = `<div class="col-md-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://www.animal.photos/mamm4/giraf1_files/giraffe10.jpg" alt="" />
-            <div>
-              <p>
-                <div class="card-body">
-                  <h5 class="card-title">Giraffe</h5>
-                  <p class="card-text">Native to sub-Saharan Africa.</p>
-                  <p>
-                  </p>
-                  <a href="#" class="btn btn-primary" 
-                      type="button"
-                      class="btn btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#updateModal">
-                      Update</a>
-                  <a href="#" class="btn btn-primary"
-                    type="button"
-                      class="btn btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#deleteModal">
-                      Delete</a>
-                </div>
-              </p>
-            </div>
-          </div>
-        </div>`;
-          document
-            .querySelector(".row")
-            .insertAdjacentHTML("beforeend", contentCard);
-        });
+    <script src="./bootstraptwo.js">
+      // document
+      //   .querySelector("#addButtonMain")
+      //   .addEventListener("click", (e) => {
+      //     const contentCard = `<div class="col-md-3">
+      //     <div class="card" style="width: 18rem;">
+      //       <img src="https://www.animal.photos/mamm4/giraf1_files/giraffe10.jpg" alt="" />
+      //       <div>
+      //         <p>
+      //           <div class="card-body">
+      //             <h5 class="card-title">Giraffe</h5>
+      //             <p class="card-text">Native to sub-Saharan Africa.</p>
+      //             <p>
+      //             </p>
+      //             <a href="#" class="btn btn-primary" 
+      //                 type="button"
+      //                 class="btn btn-primary"
+      //                 data-bs-toggle="modal"
+      //                 data-bs-target="#updateModal">
+      //                 Update</a>
+      //             <a href="#" class="btn btn-primary"
+      //               type="button"
+      //                 class="btn btn-primary"
+      //                 data-bs-toggle="modal"
+      //                 data-bs-target="#deleteModal">
+      //                 Delete</a>
+      //           </div>
+      //         </p>
+      //       </div>
+      //     </div>
+      //   </div>`;
+      //     document
+      //       .querySelector(".row")
+      //       .insertAdjacentHTML("beforeend", contentCard);
+      //   });
     </script>
 
     <!-- //Alternate way of doing the above (the above being the template method) -->

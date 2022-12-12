@@ -162,19 +162,19 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <form>
+                <form id = "cardUpdateBodyForm">
                   <div class="mb-3">
-                    <label for="inputImgFile" class="form-label"
+                    <label for="inputImgFile" class="form-label" id="addImgUrlUpdate"
                       >Update URL of image</label
                     >
                     <input
                       type="url"
                       class="form-control"
-                      id="imputImgFileUpdate"
+                      id="inputImgFileUpdate"
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="inputTitle" class="form-label"
+                    <label for="inputTitle" class="form-label" id="addImgTitleUpdate"
                       >Update title</label
                     >
                     <input
@@ -184,7 +184,7 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="inputDescription" class="form-label"
+                    <label for="inputDescription" class="form-label" id="addImgDescUpdate"
                       >Update description</label
                     >
                     <input
@@ -240,7 +240,7 @@
                 >
                   Cancel
                 </button>
-                <button type="button" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-primary" id="confirmDelete">Confirm</button>
               </div>
             </div>
           </div>

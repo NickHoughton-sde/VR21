@@ -65,10 +65,11 @@ function updateCard() {
 //add delete functionality to each confirm delete button
 function deleteCard() {
   document.getElementById(idCardToDelete).remove();
+  cardIdCount += -1;
 }
 
 
-
+// called to return array of values from new card form
 function handleCardFormSubmit() {
   let imgTitle = cardBodyForm.addImgTitle.value;
   let imgDesc = cardBodyForm.addImgDesc.value;
@@ -76,6 +77,7 @@ function handleCardFormSubmit() {
   return [imgTitle, imgDesc, imgUrl];
 }
 
+// called to return array of updated value from modal form
 function handleCardUpdateFormSubmit() {
   imgTitleUp = cardUpdateBodyForm.inputTitleUpdate.value;
   imgDescUp = cardUpdateBodyForm.inputDescriptionUpdate.value;
@@ -83,6 +85,7 @@ function handleCardUpdateFormSubmit() {
   return [imgTitleUp, imgDescUp, imgUrlUp];
 }
 
+// updates creates a new content card, updates card id counter and inserts new card into html
 function appendCard() {
   let contentCard;
   contentCard = createCard();
@@ -93,6 +96,7 @@ function appendCard() {
   
 }
 
+//used to get card id number from string
 function getNumFromString(aString) {
   let theNum = aString.replace( /^\D+/g, '');
   return theNum;

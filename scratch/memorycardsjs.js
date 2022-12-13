@@ -78,3 +78,17 @@ function unflipCards(cardOne, cardTwo) {
 // } else {
 //     // back to original state
 // }
+
+
+const myPromise = new Promise((resolve, reject) => {
+  reject("My data is rejected");
+});
+
+myPromise.then(result => {
+  debugger;
+  console.log("Success", result);
+}).catch(error => {
+  debugger;
+  console.error("Failure", error)
+})
+

@@ -65,7 +65,7 @@ function updateCard() {
   let newArrUpdate = handleCardUpdateFormSubmit();
   let newImgSrc = newArrUpdate[2];
   let newImgTitle = newArrUpdate[0];
-  let newImgDesc = newArrUpdate[0];
+  let newImgDesc = newArrUpdate[1];
 
   if (newImgSrc === "") {
     document.querySelector(`#totalCard${numIdCard} #cardImg`).src = imgOld;

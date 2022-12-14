@@ -50,13 +50,23 @@ function setListenerDeleteUpdateBtns() {
 
 // replace card in <div> element with id:stardCards
 function updateCard() {
-  let imgOld = document.querySelector(`#totalCard${numIdCard} #cardImg`);
+  let imgOld = document.querySelector(`#totalCard${numIdCard} #cardImg`).src;
+  
  
   let newArrUpdate = handleCardUpdateFormSubmit();
   let newImgSrc = newArrUpdate[2];
   let newImgTitle = newArrUpdate[0];
   let newImgDesc = newArrUpdate[0];
-  document.querySelector(`#totalCard${numIdCard} #cardImg`).src=newImgSrc;
+
+  if (newImgSrc==="") {
+    document.querySelector(`#totalCard${numIdCard} #cardImg`).src=imgOld;
+  }
+  else {
+    newImgSrc = newArrUpdate[2];
+    document.querySelector(`#totalCard${numIdCard} #cardImg`).src=newImgSrc;
+  }
+  
+  // document.querySelector(`#totalCard${numIdCard} #cardImg`).src=newImgSrc;
   document.querySelector(`#totalCard${numIdCard} .card-title`).innerText = newImgTitle;
   document.querySelector(`#totalCard${numIdCard} .card-text`).innerText = newImgDesc;
   let oldCard = document.getElementById(idCardToUpdate);

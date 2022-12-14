@@ -137,38 +137,3 @@ function createCard() {
   return contentCardNew;
 }
 
-// function createUpdateCard(newCardId) {
-//   let contentCardNewNew = null;
-//   contentCardNewNew = `<div class="col-md-3" id="totalCard${newCardId}">
-//         <div class="card" style="width: 18rem;">
-//           <img src="${handleCardUpdateFormSubmit()[2]}" alt="" />
-//           <div>
-//             <p>
-//               <div class="card-body">
-//                 <h5 class="card-title">${handleCardUpdateFormSubmit()[0]}</h5>
-//                 <p class="card-text">${handleCardUpdateFormSubmit()[1]}</p>
-//                 <p>
-//                 </p>
-//                 <a href="#" class="btn btn-primary" 
-//                     type="button"
-//                     class="btn btn-primary"
-//                     id="updateBtn"
-//                     data-bs-toggle="modal"
-//                     data-bs-target="#updateModal">
-//                     Update</a>
-//                 <a href="#" class="btn btn-primary"
-//                   type="button"
-//                     class="btn btn-primary"
-//                     id="deleteBtn"
-//                     data-bs-toggle="modal"
-//                     data-bs-target="#deleteModal">
-//                     Delete</a>
-//                     <div class ="firstDiv"></div>
-//               </div>
-//             </p>
-//           </div>
-//         </div>
-//       </div>`;
-//       // let currentCardTitle = document.querySelector(`#totalCard${newCardId} .card-title`).innerText = handleCardUpdateFormSubmit()[0];
-//   return contentCardNewNew;
-// }

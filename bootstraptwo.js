@@ -5,8 +5,9 @@ const addSaveBtn = document.getElementById("addSaveBtn");
 const domSubModified = document.getElementById("startCards");
 const confirmDelete = document.getElementById("confirmDelete");
 const updateForm = document.getElementById("addUpdateBtn");
-const savePage = document.getElementById("addSavePageBtn");
-const loadPage = document.getElementById("addLoadPageBtn");
+// for future development
+// const savePage = document.getElementById("addSavePageBtn");
+// const loadPage = document.getElementById("addLoadPageBtn");
 let cardIdCount = 0;
 let idCardToDelete;
 let idCardToUpdate;
@@ -21,8 +22,9 @@ let mySite;
 cardBodyForm.addEventListener("submit", handleCardFormSubmit);
 cardUpdateBodyForm.addEventListener("submit", handleCardUpdateFormSubmit);
 addButtonMain.addEventListener("click", handleAddNewCardBtn);
-savePage.addEventListener("click", handleSavePage);
-loadPage.addEventListener("click", handleLoadPage);
+// for future development
+// savePage.addEventListener("click", handleSavePage);
+// loadPage.addEventListener("click", handleLoadPage);
 domSubModified.addEventListener(
   "DOMSubtreeModified",
   setListenerDeleteUpdateBtns
@@ -174,12 +176,12 @@ function createCard() {
       </div>`;
   return contentCardNew;
 }
+// For future development
+// function handleSavePage() {
+//   htmlContents = document.documentElement.innerHTML;
+//   localStorage.setItem("mySite", JSON.stringify(htmlContents));
+// }
 
-function handleSavePage() {
-  htmlContents = document.documentElement.innerHTML;
-  localStorage.setItem("mySite", JSON.stringify(htmlContents));
-}
-
-function handleLoadPage() {
-  localStorage.getItem("mySite");
-}
+// function handleLoadPage() {
+//   localStorage.getItem("mySite");
+// }

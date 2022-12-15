@@ -17,6 +17,7 @@ let imgUrlUp;
 let newNewArr;
 let numIdCard;
 let mySite;
+let page_html
 
 // Event listeners
 cardBodyForm.addEventListener("submit", handleCardFormSubmit);
@@ -177,30 +178,39 @@ function createCard() {
   return contentCardNew;
 }
 // For future development
-// function handleSavePage() {
-//   htmlContents = document.documentElement.innerHTML;
-//   localStorage.setItem("mySite", JSON.stringify(htmlContents));
-// }
-
-$(function(){
-  
+function handleSavePage() {
   // this line isn't really necessary here but you have to append this attribute to the element you want the html stored of.
-  $("#wrapper").attr("contenteditable", "true")
+  ("#wrapper").attr("contenteditable", "true")
 
-  var content = document.getElementById('wrapper');
+  let content = document.getElementById('wrapper');
 
   // save the page's state after you're done with editing and clicked outside the content
-  $(content).blur(function() {
+  (content).blur(function() {
     localStorage.setItem('page_html', this.innerHTML);
   });
+}
 
-  // pretty logical, getItem retrieves your local storage data
-  if (localStorage.getItem('page_html')) {
-    content.innerHTML = localStorage.getItem('page_html');
-  }
+// function handleSavePage(){
+  
+//   // this line isn't really necessary here but you have to append this attribute to the element you want the html stored of.
+//   ("#wrapper").attr("contenteditable", "true")
 
-});
+//   var content = document.getElementById('wrapper');
+
+//   // save the page's state after you're done with editing and clicked outside the content
+//   (content).blur(function() {
+//     localStorage.setItem('page_html', this.innerHTML);
+//   });
+
+//   // pretty logical, getItem retrieves your local storage data
+//   if (localStorage.getItem('page_html')) {
+//     content.innerHTML = localStorage.getItem('page_html');
+//   }
+
+// };
 
 function handleLoadPage() {
-  localStorage.getItem("mySite");
+  if (localStorage.getItem('page_html')) {
+    content.innerHTML = localStorage.getItem('page_html');;
+}
 }

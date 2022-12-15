@@ -6,8 +6,8 @@ const domSubModified = document.getElementById("startCards");
 const confirmDelete = document.getElementById("confirmDelete");
 const updateForm = document.getElementById("addUpdateBtn");
 // for future development
-// const savePage = document.getElementById("addSavePageBtn");
-// const loadPage = document.getElementById("addLoadPageBtn");
+const savePage = document.getElementById("addSavePageBtn");
+const loadPage = document.getElementById("addLoadPageBtn");
 let cardIdCount = 0;
 let idCardToDelete;
 let idCardToUpdate;
@@ -23,8 +23,8 @@ cardBodyForm.addEventListener("submit", handleCardFormSubmit);
 cardUpdateBodyForm.addEventListener("submit", handleCardUpdateFormSubmit);
 addButtonMain.addEventListener("click", handleAddNewCardBtn);
 // for future development
-// savePage.addEventListener("click", handleSavePage);
-// loadPage.addEventListener("click", handleLoadPage);
+savePage.addEventListener("click", handleSavePage);
+loadPage.addEventListener("click", handleLoadPage);
 domSubModified.addEventListener(
   "DOMSubtreeModified",
   setListenerDeleteUpdateBtns
@@ -182,6 +182,25 @@ function createCard() {
 //   localStorage.setItem("mySite", JSON.stringify(htmlContents));
 // }
 
-// function handleLoadPage() {
-//   localStorage.getItem("mySite");
-// }
+$(function(){
+  
+  // this line isn't really necessary here but you have to append this attribute to the element you want the html stored of.
+  $("#wrapper").attr("contenteditable", "true")
+
+  var content = document.getElementById('wrapper');
+
+  // save the page's state after you're done with editing and clicked outside the content
+  $(content).blur(function() {
+    localStorage.setItem('page_html', this.innerHTML);
+  });
+
+  // pretty logical, getItem retrieves your local storage data
+  if (localStorage.getItem('page_html')) {
+    content.innerHTML = localStorage.getItem('page_html');
+  }
+
+});
+
+function handleLoadPage() {
+  localStorage.getItem("mySite");
+}
